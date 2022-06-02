@@ -13,6 +13,7 @@
 		CEF1E3F9284894F40040B11F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF1E3F7284894F40040B11F /* Main.storyboard */; };
 		CEF1E3FB284894F50040B11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF1E3FA284894F50040B11F /* Assets.xcassets */; };
 		CEF1E3FE284894F50040B11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF1E3FC284894F50040B11F /* LaunchScreen.storyboard */; };
+		CEF1E4072848A1200040B11F /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF1E4062848A1200040B11F /* ParseSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF1E4072848A1200040B11F /* ParseSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = like_a_home;
+			packageProductDependencies = (
+				CEF1E4062848A1200040B11F /* ParseSwift */,
+			);
 			productName = like_a_home;
 			productReference = CEF1E3EE284894F40040B11F /* like_a_home.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = CEF1E3E5284894F40040B11F;
+			packageReferences = (
+				CEF1E4052848A1200040B11F /* XCRemoteSwiftPackageReference "Parse-Swift" */,
+			);
 			productRefGroup = CEF1E3EF284894F40040B11F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEF1E4052848A1200040B11F /* XCRemoteSwiftPackageReference "Parse-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEF1E4062848A1200040B11F /* ParseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEF1E4052848A1200040B11F /* XCRemoteSwiftPackageReference "Parse-Swift" */;
+			productName = ParseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEF1E3E6284894F40040B11F /* Project object */;
 }
