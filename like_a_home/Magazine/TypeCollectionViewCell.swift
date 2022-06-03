@@ -21,7 +21,6 @@ class TypeCollectionViewCell: UICollectionViewCell {
         let rightPart = UIImageView()
         rightPart.translatesAutoresizingMaskIntoConstraints = false
         rightPart.image = UIImage(named: "2")
-//        rightPart.clipsToBounds = true
         rightPart.contentMode = .scaleAspectFit
         return rightPart
     }()
@@ -29,8 +28,6 @@ class TypeCollectionViewCell: UICollectionViewCell {
     private lazy var nameType: UILabel = {
         let nameType = UILabel()
         nameType.translatesAutoresizingMaskIntoConstraints = false
-        nameType.text = "тестdsfdsfdsfdsf"
-//        nameType.sizeToFit()
         nameType.backgroundColor = UIColor(named: "TextCollection")
         return nameType
     }()
@@ -65,6 +62,10 @@ class TypeCollectionViewCell: UICollectionViewCell {
             rightPart.heightAnchor.constraint(equalToConstant: 50),
             rightPart.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
+    }
+    
+    func setupCell(_ productType: ProductType) {
+        nameType.text = productType.nameType
     }
     
 }
