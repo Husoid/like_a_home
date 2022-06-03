@@ -20,6 +20,9 @@
 		CEF1E4252848B7840040B11F /* MagazineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E4242848B7840040B11F /* MagazineViewController.swift */; };
 		CEF1E4292848DDAC0040B11F /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E4282848DDAC0040B11F /* ProductType.swift */; };
 		CEF1E42B2849F27C0040B11F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E42A2849F27C0040B11F /* UIViewControllerExtension.swift */; };
+		CEF1E42D284A00ED0040B11F /* ProductTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E42C284A00ED0040B11F /* ProductTypeCollectionView.swift */; };
+		CEF1E42F284A6C2F0040B11F /* ProductTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E42E284A6C2F0040B11F /* ProductTableView.swift */; };
+		CEF1E431284A6C8B0040B11F /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E430284A6C8B0040B11F /* ProductTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		CEF1E4242848B7840040B11F /* MagazineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineViewController.swift; sourceTree = "<group>"; };
 		CEF1E4282848DDAC0040B11F /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		CEF1E42A2849F27C0040B11F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		CEF1E42C284A00ED0040B11F /* ProductTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeCollectionView.swift; sourceTree = "<group>"; };
+		CEF1E42E284A6C2F0040B11F /* ProductTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableView.swift; sourceTree = "<group>"; };
+		CEF1E430284A6C8B0040B11F /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				CEF1E4242848B7840040B11F /* MagazineViewController.swift */,
+				CEF1E42C284A00ED0040B11F /* ProductTypeCollectionView.swift */,
 				CEF1E41F2848B6D00040B11F /* TypeCollectionViewCell.swift */,
+				CEF1E42E284A6C2F0040B11F /* ProductTableView.swift */,
+				CEF1E430284A6C8B0040B11F /* ProductTableViewCell.swift */,
 			);
 			path = Magazine;
 			sourceTree = "<group>";
@@ -211,14 +220,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF1E42D284A00ED0040B11F /* ProductTypeCollectionView.swift in Sources */,
 				CEF1E4172848B6580040B11F /* TabBarViewController.swift in Sources */,
 				CEF1E41A2848B6B30040B11F /* CartViewController.swift in Sources */,
 				CEF1E42B2849F27C0040B11F /* UIViewControllerExtension.swift in Sources */,
 				CEF1E4202848B6D00040B11F /* TypeCollectionViewCell.swift in Sources */,
 				CEF1E3F2284894F40040B11F /* AppDelegate.swift in Sources */,
 				CEF1E3F4284894F40040B11F /* SceneDelegate.swift in Sources */,
+				CEF1E431284A6C8B0040B11F /* ProductTableViewCell.swift in Sources */,
 				CEF1E4232848B6D80040B11F /* ProfileViewController.swift in Sources */,
 				CEF1E41D2848B6C80040B11F /* ContactViewController.swift in Sources */,
+				CEF1E42F284A6C2F0040B11F /* ProductTableView.swift in Sources */,
 				CEF1E4252848B7840040B11F /* MagazineViewController.swift in Sources */,
 				CEF1E4292848DDAC0040B11F /* ProductType.swift in Sources */,
 			);
