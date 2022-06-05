@@ -34,9 +34,7 @@ class ProductTypeCollectionView: UIView {
     }
     
     private func layout() {
-        
-       addSubview(typeCollection)
-        
+        addSubview(typeCollection)
         NSLayoutConstraint.activate([
             typeCollection.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             typeCollection.topAnchor.constraint(equalTo: topAnchor),
@@ -78,30 +76,8 @@ extension ProductTypeCollectionView: UICollectionViewDelegateFlowLayout {
 
 // MARK: - CRUD Flow
 extension ProductTypeCollectionView {
-    /// Creates a ToDoListItem and stores it on your Back4App Database
-    /// - Parameters:
-    ///   - title: The title for the to-do task
-    ///   - description: An optional description for the to-to task
-    func createObject(nameType: String?, description: String?) {
-        let item = ProductType(nameType: nameType, description: description)
-        
-        item.save { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let savedItem):
-                self.items.append(savedItem)
-                DispatchQueue.main.async {
-//                    self.tableView.insertRows(at: [IndexPath(row: self.items.count - 1, section: 0)], with: .right)
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-//                    self.showAlert(title: "Error", message: "Failed to save item: \(error.message)")
-                }
-            }
-        }
-    }
     
-    /// Retrieves all the ToDoListItem objects from your Back4App Database
+    /// Retrieves all the TypeProduct objects from your Back4App Database
     func readObjects() {
         let query = ProductType.query()
         
@@ -116,53 +92,6 @@ extension ProductTypeCollectionView {
             case .failure(let error):
                 DispatchQueue.main.async {
                     MagazineViewController().showAlert(title: "Error", message: "Failed to save item: \(error.message)")
-                }
-            }
-        }
-    }
-    
-    /// Updates a ToDoListItem object on your Back4App Database
-    /// - Parameters:
-    ///   - objectId: The object id of the ToDoListItem to update
-    ///   - newTitle: New title for the to-to task
-    ///   - newDescription: New description for the to-do task
-    func updateObject(objectId: String, newNameType: String, newDescription: String?) {
-        var item = ProductType(objectId: objectId)
-        item.nameType = newNameType
-        item.description = newDescription
-        
-        item.save { [weak self] result in
-            switch result {
-            case .success:
-                if let row = self?.items.firstIndex(where: { $0.objectId == item.objectId }) {
-                    self?.items[row] = item
-                    DispatchQueue.main.async {
-//                        self?.tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .fade)
-                    }
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-//                    self?.showAlert(title: "Error", message: "Failed to save item: \(error.message)")
-                }
-            }
-        }
-    }
-    
-    /// Deletes a ToDoListItem on your Back4App Database
-    /// - Parameter item: The item to be deleted on your Back4App Database
-    func deleteObject(item: ProductType) {
-        item.delete { [weak self] result in
-            switch result {
-            case .success:
-                if let row = self?.items.firstIndex(where: { $0.objectId == item.objectId }) {
-                    self?.items.remove(at: row)
-                    DispatchQueue.main.async {
-//                        self?.tableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .left)
-                    }
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-//                    self?.showAlert(title: "Error", message: "Failed to save item: \(error.message)")
                 }
             }
         }

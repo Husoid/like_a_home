@@ -26,9 +26,7 @@ class TypeCollectionViewCell: UICollectionViewCell {
     }
     
     private func layout() {
-        
-        [nameType] .forEach {contentView.addSubview($0)}
-        
+        contentView.addSubview(nameType)
         NSLayoutConstraint.activate([
             nameType.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             nameType.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)

@@ -14,6 +14,7 @@ class ProductTableView: UIView {
         productTableView.translatesAutoresizingMaskIntoConstraints = false
         productTableView.dataSource = self
         productTableView.delegate = self
+        productTableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "www")
         productTableView.backgroundColor = UIColor(named: "BackgroundColor")
         return productTableView
     }()
@@ -29,13 +30,11 @@ class ProductTableView: UIView {
     
     private func layou() {
         addSubview(productTableView)
-        
         NSLayoutConstraint.activate([
             productTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             productTableView.topAnchor.constraint(equalTo: topAnchor),
             productTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             productTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        
         ])
     }
 }
@@ -48,12 +47,9 @@ extension ProductTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = UIColor(named: "BackgroundColor")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "www", for: indexPath) as! ProductTableViewCell
         return cell
-    }
-    
-    
+        }
 }
 
 // MARK: -> UITableViewDelegate
