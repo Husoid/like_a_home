@@ -58,7 +58,7 @@ extension ProductTypeCollectionView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "qqq", for: indexPath) as! TypeCollectionViewCell;()
         cell.setupCell(items[indexPath.row])
         cell.backgroundColor = UIColor(named: "TextCollection")
-        cell.layer.cornerRadius = 25
+        cell.layer.cornerRadius = 15
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 2
         return cell
@@ -71,7 +71,7 @@ extension ProductTypeCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: items[indexPath.item].nameType!.size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + 25, height: 50)
+        return CGSize(width: items[indexPath.item].nameType!.size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + 25, height: 40)
     }
     
 }

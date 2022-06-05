@@ -23,6 +23,7 @@
 		CEF1E42D284A00ED0040B11F /* ProductTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E42C284A00ED0040B11F /* ProductTypeCollectionView.swift */; };
 		CEF1E42F284A6C2F0040B11F /* ProductTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E42E284A6C2F0040B11F /* ProductTableView.swift */; };
 		CEF1E431284A6C8B0040B11F /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E430284A6C8B0040B11F /* ProductTableViewCell.swift */; };
+		CEF1E433284CDCC00040B11F /* CheckDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E432284CDCC00040B11F /* CheckDelivery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		CEF1E42C284A00ED0040B11F /* ProductTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeCollectionView.swift; sourceTree = "<group>"; };
 		CEF1E42E284A6C2F0040B11F /* ProductTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableView.swift; sourceTree = "<group>"; };
 		CEF1E430284A6C8B0040B11F /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		CEF1E432284CDCC00040B11F /* CheckDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDelivery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF1E4242848B7840040B11F /* MagazineViewController.swift */,
+				CEF1E432284CDCC00040B11F /* CheckDelivery.swift */,
 				CEF1E42C284A00ED0040B11F /* ProductTypeCollectionView.swift */,
 				CEF1E41F2848B6D00040B11F /* TypeCollectionViewCell.swift */,
 				CEF1E42E284A6C2F0040B11F /* ProductTableView.swift */,
@@ -232,6 +235,7 @@
 				CEF1E41D2848B6C80040B11F /* ContactViewController.swift in Sources */,
 				CEF1E42F284A6C2F0040B11F /* ProductTableView.swift in Sources */,
 				CEF1E4252848B7840040B11F /* MagazineViewController.swift in Sources */,
+				CEF1E433284CDCC00040B11F /* CheckDelivery.swift in Sources */,
 				CEF1E4292848DDAC0040B11F /* ProductType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

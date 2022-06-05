@@ -14,6 +14,7 @@ class ProductTableView: UIView {
         productTableView.translatesAutoresizingMaskIntoConstraints = false
         productTableView.dataSource = self
         productTableView.delegate = self
+        productTableView.backgroundColor = UIColor(named: "BackgroundColor")
         return productTableView
     }()
     
@@ -43,12 +44,12 @@ class ProductTableView: UIView {
 // MARK: -> UITableViewDataSource
 extension ProductTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.backgroundColor = .white
+        cell.backgroundColor = UIColor(named: "BackgroundColor")
         return cell
     }
     

@@ -9,6 +9,14 @@ import UIKit
 
 class MagazineViewController: UIViewController {
     
+    private let checkBoxView:CheckDelivery = {
+        let checkBoxView = CheckDelivery()
+        checkBoxView.translatesAutoresizingMaskIntoConstraints = false
+        checkBoxView.backgroundColor = .blue
+        checkBoxView.layer.cornerRadius = 10
+        return checkBoxView
+    }()
+    
     private let productTypeCollectionView: ProductTypeCollectionView = {
         let productTypeCollectionView = ProductTypeCollectionView()
         productTypeCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,11 +37,16 @@ class MagazineViewController: UIViewController {
     
     private func layout() {
         
-        [productTypeCollectionView, productTableView] .forEach {view.addSubview($0)}
+        [checkBoxView, productTypeCollectionView, productTableView] .forEach {view.addSubview($0)}
         
         NSLayoutConstraint.activate([
+            checkBoxView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            checkBoxView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            checkBoxView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            checkBoxView.heightAnchor.constraint(equalToConstant: 150),
+            
             productTypeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            productTypeCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            productTypeCollectionView.topAnchor.constraint(equalTo: checkBoxView.bottomAnchor),
             productTypeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             productTypeCollectionView.heightAnchor.constraint(equalToConstant: 70),
             
