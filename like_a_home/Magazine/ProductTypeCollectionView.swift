@@ -78,7 +78,7 @@ extension ProductTypeCollectionView: UICollectionViewDelegateFlowLayout {
 extension ProductTypeCollectionView {
     
     /// Retrieves all the TypeProduct objects from your Back4App Database
-    func readObjects() {
+    private func readObjects() {
         let query = ProductType.query()
         
         query.find { [weak self] result in

@@ -66,18 +66,18 @@ class ProductTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             fotoProduct.leadingAnchor.constraint(equalTo: viewCell.leadingAnchor, constant: 8),
             fotoProduct.topAnchor.constraint(equalTo: viewCell.topAnchor, constant: 8),
-            fotoProduct.widthAnchor.constraint(equalToConstant: 100),
+            fotoProduct.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3 - 16),
             fotoProduct.bottomAnchor.constraint(equalTo: viewCell.bottomAnchor, constant: -8),
             
             nameProduct.leadingAnchor.constraint(equalTo: fotoProduct.trailingAnchor, constant: 8),
             nameProduct.topAnchor.constraint(equalTo: viewCell.topAnchor, constant: 8),
-            nameProduct.heightAnchor.constraint(equalToConstant: 10),
+            nameProduct.heightAnchor.constraint(equalToConstant: 20),
             nameProduct.trailingAnchor.constraint(equalTo: viewCell.trailingAnchor, constant: -8),
             
             descriptionProduct.leadingAnchor.constraint(equalTo: fotoProduct.trailingAnchor, constant: 8),
             descriptionProduct.topAnchor.constraint(equalTo: nameProduct.bottomAnchor,constant: 8),
             descriptionProduct.trailingAnchor.constraint(equalTo: viewCell.trailingAnchor, constant: -8),
-            descriptionProduct.bottomAnchor.constraint(equalTo: priseProduct.bottomAnchor, constant: -8),
+            descriptionProduct.bottomAnchor.constraint(equalTo: priseProduct.topAnchor, constant: -8),
             
             priseProduct.leadingAnchor.constraint(equalTo: fotoProduct.trailingAnchor, constant: 8),
             priseProduct.heightAnchor.constraint(equalToConstant: 20),
@@ -90,6 +90,17 @@ class ProductTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(_ product: Product) {
+        nameProduct.text = product.productName
+        descriptionProduct.text = product.descriptionProduct
+        print(product.productFoto)
+        let a = product.productFoto
+        let filePath = a?.url
+//        print(s)
+//        priseProduct.text = product.productFoto
+        fotoProduct.image = UIImage(contentsOfFile: filePath)
     }
 
 }

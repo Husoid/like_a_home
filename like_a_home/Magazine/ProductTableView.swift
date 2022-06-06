@@ -8,9 +8,11 @@
 import UIKit
 
 class ProductTableView: UIView {
+    
+    var items: [Product] = []
 
     private lazy var productTableView: UITableView = {
-        let productTableView = UITableView(frame: .zero, style: .grouped)
+        let productTableView = UITableView(frame: .zero, style: .plain)
         productTableView.translatesAutoresizingMaskIntoConstraints = false
         productTableView.dataSource = self
         productTableView.delegate = self
@@ -21,14 +23,15 @@ class ProductTableView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        layou()
+        readObjects()
+        layout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func layou() {
+    private func layout() {
         addSubview(productTableView)
         NSLayoutConstraint.activate([
             productTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -43,11 +46,17 @@ class ProductTableView: UIView {
 // MARK: -> UITableViewDataSource
 extension ProductTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        items.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "www", for: indexPath) as! ProductTableViewCell
+        
+        cell.setupCell(items[indexPath.row])
         return cell
         }
 }
@@ -55,6 +64,32 @@ extension ProductTableView: UITableViewDataSource {
 // MARK: -> UITableViewDelegate
 extension ProductTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        UIScreen.main.bounds.width / 2 - 42
     }
 }
+
+
+// MARK: - CRUD Flow
+extension ProductTableView {
+    
+    /// Retrieves all the TypeProduct objects from your Back4App Database
+    func readObjects() {
+        let query = Product.query()
+        
+        query.find { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let items):
+                self.items = items
+                DispatchQueue.main.async {
+                    self.productTableView.reloadData()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    MagazineViewController().showAlert(title: "Error", message: "Failed to save item: \(error.message)")
+                }
+            }
+        }
+    }
+}
+
