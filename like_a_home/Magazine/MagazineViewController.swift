@@ -12,7 +12,7 @@ class MagazineViewController: UIViewController {
     private let checkBoxView:CheckDelivery = {
         let checkBoxView = CheckDelivery()
         checkBoxView.translatesAutoresizingMaskIntoConstraints = false
-        checkBoxView.backgroundColor = .blue
+        checkBoxView.backgroundColor = .clear
         checkBoxView.layer.cornerRadius = 10
         return checkBoxView
     }()
@@ -23,12 +23,13 @@ class MagazineViewController: UIViewController {
         return productTypeCollectionView
     }()
     
-    private let productTableView: ProductTableView = {
+    private lazy var productTableView: ProductTableView = {
         let productTableView = ProductTableView()
         productTableView.translatesAutoresizingMaskIntoConstraints = false
+        productTableView.delegate = self
         return productTableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BackgroundColor")
@@ -55,5 +56,18 @@ class MagazineViewController: UIViewController {
             productTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             productTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    
+}
+
+
+//MARK: - ProductTableViewDelegate
+
+extension MagazineViewController: ProductTableViewDelegate {
+    func buttonPressed() {
+        let detailVC = ProductDeteilViewController()
+//        navigationController?.pushViewController(detailVC, animated: true)
+        self.present(detailVC, animated: true)
     }
 }

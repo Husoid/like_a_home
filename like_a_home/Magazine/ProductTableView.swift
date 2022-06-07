@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol ProductTableViewDelegate: AnyObject {
+    func buttonPressed()
+}
+
 class ProductTableView: UIView {
     
+    weak var delegate: (ProductTableViewDelegate)?
+     
     var items: [Product] = []
 
     private lazy var productTableView: UITableView = {
@@ -17,7 +23,6 @@ class ProductTableView: UIView {
         productTableView.dataSource = self
         productTableView.delegate = self
         productTableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "www")
-        productTableView.backgroundColor = UIColor(named: "BackgroundColor")
         return productTableView
     }()
     
@@ -57,8 +62,13 @@ extension ProductTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "www", for: indexPath) as! ProductTableViewCell
         
         cell.setupCell(items[indexPath.row])
+        cell.backgroundColor = UIColor(named: "BackgroundColor")
         return cell
         }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.buttonPressed()
+    }
 }
 
 // MARK: -> UITableViewDelegate

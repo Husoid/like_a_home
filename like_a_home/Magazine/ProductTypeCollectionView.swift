@@ -16,7 +16,7 @@ class ProductTypeCollectionView: UIView {
         layout.scrollDirection = .horizontal
         let typeCollection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         typeCollection.translatesAutoresizingMaskIntoConstraints = false
-        typeCollection.register(TypeCollectionViewCell.self, forCellWithReuseIdentifier: "qqq")
+        typeCollection.register(ProductTypeCollectionViewCell.self, forCellWithReuseIdentifier: "qqq")
         typeCollection.dataSource = self
         typeCollection.delegate = self
         typeCollection.backgroundColor = UIColor(named: "BackgroundColor")
@@ -53,12 +53,12 @@ extension ProductTypeCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "qqq", for: indexPath) as! TypeCollectionViewCell;()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "qqq", for: indexPath) as! ProductTypeCollectionViewCell;()
         cell.setupCell(items[indexPath.row])
         cell.backgroundColor = UIColor(named: "TextCollection")
         cell.layer.cornerRadius = 15
         cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 2
+        cell.layer.borderWidth = 1
         return cell
     }
 }

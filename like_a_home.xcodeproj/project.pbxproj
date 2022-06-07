@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEAEB77A284FAF8800B768E8 /* ProductDeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEB779284FAF8800B768E8 /* ProductDeteilViewController.swift */; };
 		CEF1E3F2284894F40040B11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E3F1284894F40040B11F /* AppDelegate.swift */; };
 		CEF1E3F4284894F40040B11F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E3F3284894F40040B11F /* SceneDelegate.swift */; };
 		CEF1E3FB284894F50040B11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF1E3FA284894F50040B11F /* Assets.xcassets */; };
@@ -15,7 +16,7 @@
 		CEF1E4172848B6580040B11F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E4162848B6580040B11F /* TabBarViewController.swift */; };
 		CEF1E41A2848B6B30040B11F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E4192848B6B30040B11F /* CartViewController.swift */; };
 		CEF1E41D2848B6C80040B11F /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E41C2848B6C80040B11F /* ContactViewController.swift */; };
-		CEF1E4202848B6D00040B11F /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E41F2848B6D00040B11F /* TypeCollectionViewCell.swift */; };
+		CEF1E4202848B6D00040B11F /* ProductTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E41F2848B6D00040B11F /* ProductTypeCollectionViewCell.swift */; };
 		CEF1E4232848B6D80040B11F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E4222848B6D80040B11F /* ProfileViewController.swift */; };
 		CEF1E4252848B7840040B11F /* MagazineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E4242848B7840040B11F /* MagazineViewController.swift */; };
 		CEF1E4292848DDAC0040B11F /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E4282848DDAC0040B11F /* ProductType.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEAEB779284FAF8800B768E8 /* ProductDeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeteilViewController.swift; sourceTree = "<group>"; };
 		CEF1E3EE284894F40040B11F /* like_a_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = like_a_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF1E3F1284894F40040B11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF1E3F3284894F40040B11F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		CEF1E4162848B6580040B11F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEF1E4192848B6B30040B11F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		CEF1E41C2848B6C80040B11F /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
-		CEF1E41F2848B6D00040B11F /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEF1E41F2848B6D00040B11F /* ProductTypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEF1E4222848B6D80040B11F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CEF1E4242848B7840040B11F /* MagazineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineViewController.swift; sourceTree = "<group>"; };
 		CEF1E4282848DDAC0040B11F /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
@@ -118,9 +120,10 @@
 				CEF1E4242848B7840040B11F /* MagazineViewController.swift */,
 				CEF1E432284CDCC00040B11F /* CheckDelivery.swift */,
 				CEF1E42C284A00ED0040B11F /* ProductTypeCollectionView.swift */,
-				CEF1E41F2848B6D00040B11F /* TypeCollectionViewCell.swift */,
+				CEF1E41F2848B6D00040B11F /* ProductTypeCollectionViewCell.swift */,
 				CEF1E42E284A6C2F0040B11F /* ProductTableView.swift */,
 				CEF1E430284A6C8B0040B11F /* ProductTableViewCell.swift */,
+				CEAEB779284FAF8800B768E8 /* ProductDeteilViewController.swift */,
 			);
 			path = Magazine;
 			sourceTree = "<group>";
@@ -223,10 +226,11 @@
 				CEF1E435284D248C0040B11F /* Product.swift in Sources */,
 				CEF1E41A2848B6B30040B11F /* CartViewController.swift in Sources */,
 				CEF1E42B2849F27C0040B11F /* UIViewControllerExtension.swift in Sources */,
-				CEF1E4202848B6D00040B11F /* TypeCollectionViewCell.swift in Sources */,
+				CEF1E4202848B6D00040B11F /* ProductTypeCollectionViewCell.swift in Sources */,
 				CEF1E3F2284894F40040B11F /* AppDelegate.swift in Sources */,
 				CEF1E3F4284894F40040B11F /* SceneDelegate.swift in Sources */,
 				CEF1E431284A6C8B0040B11F /* ProductTableViewCell.swift in Sources */,
+				CEAEB77A284FAF8800B768E8 /* ProductDeteilViewController.swift in Sources */,
 				CEF1E4232848B6D80040B11F /* ProfileViewController.swift in Sources */,
 				CEF1E41D2848B6C80040B11F /* ContactViewController.swift in Sources */,
 				CEF1E42F284A6C2F0040B11F /* ProductTableView.swift in Sources */,
@@ -300,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -354,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

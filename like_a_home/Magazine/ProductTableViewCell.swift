@@ -12,7 +12,7 @@ class ProductTableViewCell: UITableViewCell {
     private let viewCell:UIView = {
         let viewCell = UIView()
         viewCell.translatesAutoresizingMaskIntoConstraints = false
-        viewCell.backgroundColor = .cyan
+        viewCell.backgroundColor = .clear
         viewCell.layer.cornerRadius = 10
         return viewCell
     }()
@@ -20,28 +20,32 @@ class ProductTableViewCell: UITableViewCell {
     private let fotoProduct:UIImageView = {
         let fotoProduct = UIImageView()
         fotoProduct.translatesAutoresizingMaskIntoConstraints = false
-        fotoProduct.backgroundColor = .white
+        fotoProduct.backgroundColor = .clear
         return fotoProduct
     }()
     
     private let nameProduct:UILabel = {
         let nameProduct = UILabel()
         nameProduct.translatesAutoresizingMaskIntoConstraints = false
-        nameProduct.backgroundColor = .gray
+        nameProduct.backgroundColor = .clear
         return nameProduct
     }()
     
     private let descriptionProduct:UILabel = {
         let descriptionProduct = UILabel()
         descriptionProduct.translatesAutoresizingMaskIntoConstraints = false
-        descriptionProduct.backgroundColor = .white
+        descriptionProduct.backgroundColor = .clear
         return descriptionProduct
     }()
     
     private let priseProduct:UILabel = {
         let priseProduct = UILabel()
         priseProduct.translatesAutoresizingMaskIntoConstraints = false
-        priseProduct.backgroundColor = .systemRed
+        priseProduct.backgroundColor = UIColor(named: "TextCollection")
+        priseProduct.layer.cornerRadius = 10
+        priseProduct.layer.borderColor = UIColor.black.cgColor
+        priseProduct.layer.borderWidth = 1
+        priseProduct.textAlignment = .center
         return priseProduct
     }()
     
@@ -81,26 +85,23 @@ class ProductTableViewCell: UITableViewCell {
             
             priseProduct.leadingAnchor.constraint(equalTo: fotoProduct.trailingAnchor, constant: 8),
             priseProduct.heightAnchor.constraint(equalToConstant: 20),
-            priseProduct.trailingAnchor.constraint(equalTo: viewCell.trailingAnchor, constant: -8),
+            priseProduct.widthAnchor.constraint(equalToConstant: 60),
             priseProduct.bottomAnchor.constraint(equalTo: viewCell.bottomAnchor, constant: -8)
         ])
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
     func setupCell(_ product: Product) {
         nameProduct.text = product.productName
         descriptionProduct.text = product.descriptionProduct
-        print(product.productFoto)
-        let a = product.productFoto
-        let filePath = a?.url
-//        print(s)
-//        priseProduct.text = product.productFoto
-        fotoProduct.image = UIImage(contentsOfFile: filePath)
+        let url = product.productFoto?.url
+        let data = try? Data(contentsOf: url!)
+        fotoProduct.image = UIImage(data: data!)
+        priseProduct.text = String(product.prise!)
     }
 
 }

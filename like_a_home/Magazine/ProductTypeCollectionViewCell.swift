@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TypeCollectionViewCell: UICollectionViewCell {
+class ProductTypeCollectionViewCell: UICollectionViewCell {
     
     private lazy var nameType: UILabel = {
         let nameType = UILabel()

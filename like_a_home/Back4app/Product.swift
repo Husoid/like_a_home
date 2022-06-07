@@ -24,4 +24,6 @@ struct Product: ParseObject {
     var descriptionProduct: String?
     
     var productFoto: ParseFile?
+    
+    var prise: Int?
 }
