@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProductTableViewDelegate: AnyObject {
-    func buttonPressed()
+    func buttonPressed(product: Product)
 }
 
 class ProductTableView: UIView {
@@ -67,7 +67,7 @@ extension ProductTableView: UITableViewDataSource {
         }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.buttonPressed()
+        delegate?.buttonPressed(product: items[indexPath.row])
     }
 }
 

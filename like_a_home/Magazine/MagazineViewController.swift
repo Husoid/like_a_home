@@ -65,9 +65,9 @@ class MagazineViewController: UIViewController {
 //MARK: - ProductTableViewDelegate
 
 extension MagazineViewController: ProductTableViewDelegate {
-    func buttonPressed() {
+    func buttonPressed(product: Product) {
         let detailVC = ProductDeteilViewController()
-//        navigationController?.pushViewController(detailVC, animated: true)
+        detailVC.completedData(product)
         self.present(detailVC, animated: true)
     }
 }

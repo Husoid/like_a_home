@@ -42,6 +42,7 @@ class ProductTableViewCell: UITableViewCell {
         let priseProduct = UILabel()
         priseProduct.translatesAutoresizingMaskIntoConstraints = false
         priseProduct.backgroundColor = UIColor(named: "TextCollection")
+        priseProduct.clipsToBounds = true
         priseProduct.layer.cornerRadius = 10
         priseProduct.layer.borderColor = UIColor.black.cgColor
         priseProduct.layer.borderWidth = 1

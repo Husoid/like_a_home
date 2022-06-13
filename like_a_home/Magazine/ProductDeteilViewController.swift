@@ -94,14 +94,14 @@ class ProductDeteilViewController: UIViewController {
         ])
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func completedData (_ product: Product) {
+        let url = product.productFoto?.url
+        let data = try? Data(contentsOf: url!)
+        productImage.image = UIImage(data: data!)
+        productName.text = product.productName
+        productDiscription.text = product.descriptionProduct
+        productPrise.text = String(product.prise!)
+        
     }
-    */
 
 }
