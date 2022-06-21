@@ -9,6 +9,8 @@ import UIKit
 
 class CheckDelivery: UIView {
 
+private var onDelivery = true
+
     private let checkBoxView:UIView = {
         let checkBoxView = UIView()
         checkBoxView.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +95,7 @@ class CheckDelivery: UIView {
             textDelivery.bottomAnchor.constraint(equalTo: checkBoxView.bottomAnchor,constant: -8)
         ])
         
-        [onDeliveryLabel, inRoomLabel , buttonDelivery] .forEach {addSubview($0)}
+        [onDeliveryLabel, inRoomLabel , buttonDelivery] .forEach {checkButtonView.addSubview($0)}
         
         NSLayoutConstraint.activate([
             buttonDelivery.leadingAnchor.constraint(equalTo: checkButtonView.leadingAnchor, constant: 5),
@@ -112,5 +114,16 @@ class CheckDelivery: UIView {
             inRoomLabel.bottomAnchor.constraint(equalTo: checkButtonView.bottomAnchor, constant: -5),
         ])
     }
-
+    
+    private func clickOnDeliveryLabel() {
+        if onDelivery {
+//            перемещаю кнопку на забор товара в магазине
+            
+            onDelivery = false
+        } else {
+//            перемещаю кнопку на доставку
+            
+            onDelivery = true
+        }
+    }
 }
